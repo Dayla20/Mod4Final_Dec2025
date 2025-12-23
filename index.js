@@ -8,13 +8,17 @@ async function main() {
     userListEl.innerHTML = usersData.map((user) => userHTML(user)).join("")
 }
 main();
+  function showUserPosts(id) {
+    window.open(`${window.location.origin}/user.html`,"_blank");
+  }
+
 function userHTML(user) {
-    return `<div class="user-card">
+    return `<div class="user-card" onclick="showUserPosts(${user.id})">
         <div class="user-card__container">
           <h3>${user.name}</h4>
             <p><b>Email:</b> ${user.email}</p>
             <p><b>Phone:</b> ${user.phone}</p>
-            <p><b>Website:</b> <a href="https://${user.website}" target="_blank">${user.website}</a></p>
+            <p><b>Website:</b> <a href="https://${user.website}" target="_blank">https://${user.website}</a></p>
         </div>
       </div>`;
 }
