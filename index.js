@@ -9,7 +9,8 @@ async function main() {
 }
 main();
   function showUserPosts(id) {
-    window.open(`${window.location.origin}/user.html`,"_blank");
+    localStorage.setItem("Id", id);
+    window.location.href = `${window.location.origin}/user.html`;
   }
 
 function userHTML(user) {
